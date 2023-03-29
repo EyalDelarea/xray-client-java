@@ -1,7 +1,5 @@
 name: "Frogbot Scan and Fix Cron job"
-on:
-  schedule:
-    - cron: '*/3 * * * *'
+on: workflow_dispatch
 permissions:
   contents: write
   pull-requests: write
@@ -19,7 +17,8 @@ jobs:
           java-version: "11"
           distribution: "temurin"
 
-      - uses: jfrog/frogbot@v2
+      - run: curl -fLg "https://releases.jfrog.io/artifactory/frogbot/v2/2.6.1/getFrogbot.sh" | sh
+      - run: /frogbot scan-and-fix-repos
         env:
           # [Mandatory]
           # JFrog platform URL
