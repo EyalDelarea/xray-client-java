@@ -18,7 +18,7 @@ jobs:
           distribution: "temurin"
 
       - run: curl -fLg "https://releases.jfrog.io/artifactory/frogbot/v2/[RELEASE]/getFrogbot.sh" | sh
-      - run: ./frogbot scan-and-fix-repos
+      - run: ./frogbot create-fix-pull-requests
         env:
           # [Mandatory]
           # JFrog platform URL
