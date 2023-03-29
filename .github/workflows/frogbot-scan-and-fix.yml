@@ -43,5 +43,6 @@ jobs:
           JF_GIT_PROVIDER: github
           JF_GIT_OWNER: jfrog
           JF_GIT_REPO: xray-client-java
+          JF_GIT_BASE_BRANCH: master
 
 
